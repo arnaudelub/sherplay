@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/router_utils.dart';
 import 'package:sherplay/pages/home_page.dart';
+import 'package:sherplay/pages/new_patient_page.dart';
 
 class Router {
   static const homePage = '/';
+  static const newPatientPage = '/new-patient-page';
   static GlobalKey<NavigatorState> get navigatorKey =>
       getNavigatorKey<Router>();
   static NavigatorState get navigator => navigatorKey.currentState;
@@ -21,6 +23,11 @@ class Router {
       case Router.homePage:
         return MaterialPageRoute(
           builder: (_) => HomePage(),
+          settings: settings,
+        );
+      case Router.newPatientPage:
+        return MaterialPageRoute(
+          builder: (_) => NewPatientPage(),
           settings: settings,
         );
       default:

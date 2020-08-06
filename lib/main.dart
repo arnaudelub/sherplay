@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sherplay/pages/home_page.dart';
+import 'package:sherplay/routes/router.gr.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
             textTheme: ButtonTextTheme.accent,
           )),
       home: HomePage(),
+      initialRoute: Router.homePage,
+      onGenerateRoute: Router.onGenerateRoute,
+      navigatorKey: Router.navigatorKey,
     );
   }
 }
